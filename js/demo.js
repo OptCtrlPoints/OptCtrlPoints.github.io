@@ -41,7 +41,7 @@ function main() {
     let cameraLookAt = [0, 0, 0];
     
 
-    scale = 1.2;
+    scale = 1.0;
     let cameraPositionHuman = [0, 0, 5].map(x => x * scale);
     
     scale = 0.6;
