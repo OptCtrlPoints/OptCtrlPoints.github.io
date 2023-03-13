@@ -132,9 +132,9 @@ function main() {
         //     ' rotation: ' + camera.rotation['x'] + ', ' + camera.rotation['y'] + ', ' + camera.rotation['z'] +
         //     ' cameraLookAt: ' + vector.toArray());
     });
-    controls.enableZoom = false;
+    controls.enableZoom = true;
     controls.enablePan = false;
-    controls.enableRotate = false;
+    controls.enableRotate = true;
 
     // show axes
     var axesHelper = new THREE.AxesHelper(1);
