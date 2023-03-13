@@ -41,20 +41,20 @@ function main() {
     let cameraLookAt = [0, 0, 0];
     
 
-    scale = 0.6;
+    scale = 0.3;
     let cameraPositionHuman = [0, 0, 5].map(x => x * scale);
     
     scale = 0.6;
-    let cameraPositionFox = [0, 0, 5].map(x => x * scale);
+    let cameraPositionFox = [0, 5, 0].map(x => x * scale);
     
     scale = 0.6;
-    let cameraPositionHippo = [0, 0, 5].map(x => x * scale);
+    let cameraPositionHippo = [0, 5, 0].map(x => x * scale);
 
     scale = 0.6;
-    let cameraPositionHorse = [0, 0, 5].map(x => x * scale);
+    let cameraPositionHorse = [0, 5, 0].map(x => x * scale);
 
     scale = 0.6;
-    let cameraPositionTiger = [0, 0, 5].map(x => x * scale);
+    let cameraPositionTiger = [0, 5, 0].map(x => x * scale);
 
     let cameraPosition = cameraPositionHuman
     camera.position.set(... cameraPosition);
