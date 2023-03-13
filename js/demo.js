@@ -456,9 +456,9 @@ function main() {
             var c = faces[faceIndex][2];
 
             var face = new THREE.Face3(a, b, c);
-            face.vertexColors[ 0 ] = new THREE.Color('rgb(0.5,0.5,0.5)');
-            face.vertexColors[ 1 ] = new THREE.Color('rgb(0.5,0.5,0.5)');
-            face.vertexColors[ 2 ] = new THREE.Color('rgb(0.5,0.5,0.5)');
+            face.vertexColors[ 0 ] = new THREE.Color('rgb(127, 127, 127)');
+            face.vertexColors[ 1 ] = new THREE.Color('rgb(127, 127, 127)');
+            face.vertexColors[ 2 ] = new THREE.Color('rgb(127, 127, 127)');
             // face.vertexColors[ 0 ] = new THREE.Color('rgb(' + colors[a][0] + ',' + colors[a][1] + ',' + colors[a][2] + ')');
             // face.vertexColors[ 1 ] = new THREE.Color('rgb(' + colors[b][0] + ',' + colors[b][1] + ',' + colors[b][2] + ')');
             // face.vertexColors[ 2 ] = new THREE.Color('rgb(' + colors[c][0] + ',' + colors[c][1] + ',' + colors[c][2] + ')');
