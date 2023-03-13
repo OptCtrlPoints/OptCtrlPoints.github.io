@@ -745,9 +745,14 @@ function main() {
     };
 
     var gui = new GUI();
-    gui.add( params, 'Michelle' );
-    gui.add( params, 'Mousey' );
-    gui.add( params, 'Ortiz' );
+    // gui.add( params, 'Michelle' );
+    // gui.add( params, 'Mousey' );
+    // gui.add( params, 'Ortiz' );
+    gui.add( params, 'SMPL_Human' );
+    gui.add( params, 'SMAL_fox' );
+    gui.add( params, 'SMAL_hippo' );
+    gui.add( params, 'SMAL_horse' );
+    gui.add( params, 'SMAL_tiger' );
     // gui.add( params, 'reset' );
     // gui.add( params, 'screenshot' );
     // gui.add( params, 'resetCamera' );
