@@ -697,11 +697,11 @@ function main() {
     };
 
     var gui = new GUI();
-    gui.add( params, 'SMPL_Human' );
-    gui.add( params, 'SMAL_Fox' );
-    gui.add( params, 'SMAL_Hippo' );
-    gui.add( params, 'SMAL_Horse' );
-    gui.add( params, 'SMAL_Tiger' );
+    gui.add( params, 'Human' );
+    gui.add( params, 'Fox' );
+    gui.add( params, 'Hippo' );
+    gui.add( params, 'Horse' );
+    gui.add( params, 'Tiger' );
     // gui.add( params, 'reset' );
     // gui.add( params, 'screenshot' );
     // gui.add( params, 'resetCamera' );
