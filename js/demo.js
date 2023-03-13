@@ -11,7 +11,7 @@ import { DragControls } from 'https://unpkg.com/three@0.118.3/examples/jsm/contr
 function main() {
     // const OBJColor = 0x2194CE;
     const OBJColor = 0x2e81d4;
-    const OBJOpacity = 1;
+    const OBJOpacity = 0.5;
 
     // init renderer
     const container = document.querySelector('#demo-container');
@@ -38,33 +38,25 @@ function main() {
     const far = 100;
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
     let scale;
-    // let {x, y, z} = sphericalToCart(3, 0, 0)
-    // chair
-    // let [x, y, z] = [1.7, 3, 2.25].map(x => x * scale);
-    //scale = 1.1;
-    scale = 0.6;
-    //let cameraPositionChair = [1.94515847577463, 0.772487180981709, 2.2497691693169424].map(x => x * scale);
-    let cameraPositionMousey = [0, 0, 5].map(x => x * scale);
-    // let cameraRotation = [-0.3912286234799624, 0.5366379005261677, 0.20784082348737504];
     let cameraLookAt = [0, 0, 0];
-    // let cameraLookAt = [-0.5112493893594757,-0.32772262668803287,-0.7944947714341858];
-
-    // // plane
-    // let scale = 1.2;
-    // // // let [x, y, z] = [0.5 * scale, 2.5 * scale, 1.25 * scale];
-    // let cameraPosition = [0.5 * scale, 2.5 * scale, 0 * scale];
-    scale = 0.6;
-    //let cameraPositionAirplane = [1.7, 3, 2.25].map(x => x * scale);
-    let cameraPositionMichelle = [0, 0, 5].map(x => x * scale);
-    // dualSDF
-    // let cameraPosition = [1.7229492652657825, 1.4053401980124738, 2.120920557927234];
-    // let scale = 0.7;
-    // let cameraPosition = [1.3518370604886951, 1.821583023756495, 2.072730350363848].map(x => x * scale);
+    
 
     scale = 0.6;
-    let cameraPositionOrtiz = [0, 0, 5].map(x => x * scale);
+    let cameraPositionHuman = [0, 0, 5].map(x => x * scale);
+    
+    scale = 0.6;
+    let cameraPositionFox = [0, 0, 5].map(x => x * scale);
+    
+    scale = 0.6;
+    let cameraPositionHippo = [0, 0, 5].map(x => x * scale);
 
-    let cameraPosition = cameraPositionMichelle
+    scale = 0.6;
+    let cameraPositionHorse = [0, 0, 5].map(x => x * scale);
+
+    scale = 0.6;
+    let cameraPositionTiger = [0, 0, 5].map(x => x * scale);
+
+    let cameraPosition = cameraPositionHuman
     camera.position.set(... cameraPosition);
     // camera.rotation.set(... cameraRotation);
     // camera.position.set(0, 2.5, 2.5);
@@ -72,55 +64,6 @@ function main() {
     scene.add(camera);
 
     // LIGHTS
-    // scene.add(new THREE.AmbientLight(0xC89379));
-    // scene.add( new THREE.AmbientLight( 0x585858 ) );
-
-    // var light = new THREE.DirectionalLight( 0xE6D5E6, 1 );
-    // light.position.set( 1.5, -1.5, 1.5 );
-    // scene.add( light );
-    // var geometry = new THREE.SphereGeometry(0.04, 16, 16);
-    // var material = new THREE.MeshBasicMaterial({color: light.color});
-    // var point = new THREE.Mesh(geometry, material);
-    // point.position.copy(light.position);
-    // scene.add(point)
-
-    // var light = new THREE.DirectionalLight( 0xccccff, 1 );
-    // light.position.set( 0, 3, 1 );
-    // scene.add( light );
-    // var geometry = new THREE.SphereGeometry(0.04, 16, 16);
-    // var material = new THREE.MeshBasicMaterial({color: light.color});
-    // var point = new THREE.Mesh(geometry, material);
-    // point.position.copy(light.position);
-    // scene.add(point)
-
-    // var light = new THREE.HemisphereLight( 0x444444, 0x444444 );
-    // light.position.set( 0, 20, 0 );
-    // scene.add( light );
-    // var geometry = new THREE.SphereGeometry(1, 16, 16);
-    // var material = new THREE.MeshBasicMaterial({color: 0x0});
-    // var point = new THREE.Mesh(geometry, material);
-    // point.position.copy(light.position);
-    // scene.add(point)
-
-    // var light = new THREE.DirectionalLight( 0xaaaaaa );
-    // light.position.set( 1, 5, 5 );
-    // light.castShadow = true;
-    // light.shadow.camera.top = 10;
-    // light.shadow.camera.bottom = - 10;
-    // light.shadow.camera.left = - 10;
-    // light.shadow.camera.right = 10;
-    // light.shadow.camera.near = 0.1;
-    // light.shadow.camera.far = 40;
-    // scene.add( light );
-    // var light = new THREE.DirectionalLight( 0xaaaaaa );
-    // light.position.set( 1, 10, -5 );
-    // scene.add( light );
-    // var geometry = new THREE.SphereGeometry(1, 16, 16);
-    // var material = new THREE.MeshBasicMaterial({color: 0x0});
-    // var point = new THREE.Mesh(geometry, material);
-    // point.position.copy(light.position);
-    // scene.add(point)
-
     let ambientLight = new THREE.AmbientLight( 0xffffff, 0.1 );
     scene.add( ambientLight );
 
@@ -160,11 +103,6 @@ function main() {
     spotLight2.shadow.focus = 1;
     scene.add( spotLight2 );
 
-    // let lightHelper = new THREE.SpotLightHelper( spotLight );
-    // scene.add( lightHelper );
-
-    // let shadowCameraHelper = new THREE.CameraHelper( spotLight.shadow.camera );
-    // scene.add( shadowCameraHelper );
 
     // GROUND
     var groundMesh = new THREE.Mesh(
@@ -720,39 +658,50 @@ function main() {
             resetKeypoints();
             fetchMeshTransform();
         },
-        Michelle: function () {
+        Human: function () {
             if (document.getElementById("message").innerHTML.length > 0)
                 return;
-            camera.position.set(... cameraPositionMichelle);
+            camera.position.set(... cameraPositionHuman);
             camera.lookAt(0, 0, 0);
             loadExample(examples[0]);
         },
-        Mousey: function () {
+        Fox: function () {
             if (document.getElementById("message").innerHTML.length > 0)
                 return;
-            camera.position.set(... cameraPositionMousey);
+            camera.position.set(... cameraPositionFox);
             camera.lookAt(0, 0, 0);
             loadExample(examples[1]);
         },
-        Ortiz: function () {
+        Hippo: function () {
             if (document.getElementById("message").innerHTML.length > 0)
                 return;
-            camera.position.set(... cameraPositionOrtiz);
+            camera.position.set(... cameraPositionHippo);
             camera.lookAt(0, 0, 0);
             loadExample(examples[2]);
-        }
+        },
+        Horse: function () {
+            if (document.getElementById("message").innerHTML.length > 0)
+                return;
+            camera.position.set(... cameraPositionHorse);
+            camera.lookAt(0, 0, 0);
+            loadExample(examples[3]);
+        },
+        Tiger: function () {
+            if (document.getElementById("message").innerHTML.length > 0)
+                return;
+            camera.position.set(... cameraPositionTiger);
+            camera.lookAt(0, 0, 0);
+            loadExample(examples[4]);
+        },
 
     };
 
     var gui = new GUI();
-    // gui.add( params, 'Michelle' );
-    // gui.add( params, 'Mousey' );
-    // gui.add( params, 'Ortiz' );
     gui.add( params, 'SMPL_Human' );
-    gui.add( params, 'SMAL_fox' );
-    gui.add( params, 'SMAL_hippo' );
-    gui.add( params, 'SMAL_horse' );
-    gui.add( params, 'SMAL_tiger' );
+    gui.add( params, 'SMAL_Fox' );
+    gui.add( params, 'SMAL_Hippo' );
+    gui.add( params, 'SMAL_Horse' );
+    gui.add( params, 'SMAL_Tiger' );
     // gui.add( params, 'reset' );
     // gui.add( params, 'screenshot' );
     // gui.add( params, 'resetCamera' );
